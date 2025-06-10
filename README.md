@@ -184,9 +184,9 @@ Once the proxy server is running (either via Docker or natively):
 
 ## Demo
 
-![Cache Demo](https://github.com/Garvit240205/HTTP-Proxy-Server/MultiThreadedProxyServerClient-main/pics/starting container.png)
-![Cache Demo](https://github.com/Garvit240205/HTTP-Proxy-Server/MultiThreadedProxyServerClient-main/pics/First Response.png)
-![Cache Demo](https://github.com/Garvit240205/HTTP-Proxy-Server/MultiThreadedProxyServerClient-main/pics/Second Response.png)
+[(https://github.com/Garvit240205/HTTP-Proxy-Server/MultiThreadedProxyServerClient-main/pics/starting container.png)](https://github.com/Garvit240205/HTTP-Proxy-Server/blob/main/MultiThreadedProxyServerClient-main/pics/starting%20container%20(not%20in%20cache).png)
+[(https://github.com/Garvit240205/HTTP-Proxy-Server/MultiThreadedProxyServerClient-main/pics/First Response.png)](https://github.com/Garvit240205/HTTP-Proxy-Server/blob/main/MultiThreadedProxyServerClient-main/pics/First%20Response%20(not%20in%20cache).png)
+[(https://github.com/Garvit240205/HTTP-Proxy-Server/MultiThreadedProxyServerClient-main/pics/Second Response.png)](https://github.com/Garvit240205/HTTP-Proxy-Server/blob/main/MultiThreadedProxyServerClient-main/pics/Second%20Response%20(not%20in%20cache).png)
 _Illustrates cache hit and miss scenarios in the proxy logs._
 
 *   **Cache Miss:** When a website/resource is accessed for the first time, the proxy logs will show "url not found" (or similar debug output), indicating a cache miss. The request is forwarded to the origin server.
