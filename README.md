@@ -47,8 +47,7 @@ This HTTP proxy server is developed in C to provide a fundamental understanding 
 [[Back to top]](#table-of-contents)
 
 #### Basic Working Flow of the Proxy Server:
-
-![Proxy Server Diagram](https://github.com/Garvit240205/HTTP-Proxy-Server/MultiThreadedProxyServerClient-main/pics/image.png)
+![Proxy Server Diagram](https://raw.githubusercontent.com/Garvit240205/HTTP-Proxy-Server/main/MultiThreadedProxyServerClient-main/pics/image.png)
 _Conceptual diagram illustrating the flow of requests and responses through the proxy server._
 
 #### Multi-threading Implementation:
@@ -184,7 +183,7 @@ Once the proxy server is running (either via Docker or natively):
 
 ## Demo
 
-![Starting Container](https://raw.githubusercontent.com/Garvit240205/HTTP-Proxy-Server/main/MultiThreadedProxyServerClient-main/pics/starting%20container%20.png)
+![Starting Container](https://raw.githubusercontent.com/Garvit240205/HTTP-Proxy-Server/main/MultiThreadedProxyServerClient-main/pics/starting%20container.png)
 
 ![First Response](https://raw.githubusercontent.com/Garvit240205/HTTP-Proxy-Server/main/MultiThreadedProxyServerClient-main/pics/First%20Response%20(not%20in%20cache).png)
 
