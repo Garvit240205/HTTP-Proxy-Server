@@ -188,7 +188,7 @@ Once the proxy server is running (either via Docker or natively):
 
 ![First Response](https://raw.githubusercontent.com/Garvit240205/HTTP-Proxy-Server/main/MultiThreadedProxyServerClient-main/pics/First%20Response%20(not%20in%20cache).png)
 
-![Second Response](https://raw.githubusercontent.com/Garvit240205/HTTP-Proxy-Server/main/MultiThreadedProxyServerClient-main/pics/Second%20Response%20(not%20in%20cache).png)
+![Second Response](https://raw.githubusercontent.com/Garvit240205/HTTP-Proxy-Server/main/MultiThreadedProxyServerClient-main/pics/Second%20Response%20(%20found%20in%20cache).png)
 
 _Illustrates cache hit and miss scenarios in the proxy logs._
 
