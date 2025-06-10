@@ -184,7 +184,7 @@ Once the proxy server is running (either via Docker or natively):
 
 ## Demo
 
-![Starting Container](https://raw.githubusercontent.com/Garvit240205/HTTP-Proxy-Server/main/MultiThreadedProxyServerClient-main/pics/starting%20container%20(not%20in%20cache).png)
+![Starting Container](https://raw.githubusercontent.com/Garvit240205/HTTP-Proxy-Server/main/MultiThreadedProxyServerClient-main/pics/starting%20container%20.png)
 
 ![First Response](https://raw.githubusercontent.com/Garvit240205/HTTP-Proxy-Server/main/MultiThreadedProxyServerClient-main/pics/First%20Response%20(not%20in%20cache).png)
 
