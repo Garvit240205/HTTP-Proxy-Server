@@ -14,7 +14,6 @@ This project implements a multi-threaded HTTP proxy server in C, featuring an in
   - [Motivation and Learning Objectives](#motivation-and-learning-objectives)
   - [Operating System Components Used](#operating-system-components-used)
   - [Current Limitations](#current-limitations)
-  - [Potential Extensions](#potential-extensions)
 - [How to Run](#how-to-run)
   - [Prerequisites](#prerequisites)
   - [Building and Running (with Docker - Recommended)](#building-and-running-with-docker---recommended)
@@ -30,16 +29,16 @@ This HTTP proxy server is developed in C to provide a fundamental understanding 
 
 ## Features
 
-*   **HTTP Request Parsing:** Robust parsing of HTTP/1.0 and HTTP/1.1 `GET` requests, extracting method, URL components (protocol, host, port, path), and headers.
+*   **HTTP Request Parsing:** Robust parsing of HTTP/1.0 and HTTP/1.1 `GET` requests, extracting method, URL components, and headers.
 *   **Header Management:** Dynamic setting, getting, and removing of HTTP headers (e.g., ensuring `Connection: close` and `Host` headers are correctly set for origin server communication).
 *   **Multi-threading:** Handles concurrent client connections using POSIX threads (`pthread`).
 *   **Concurrency Control:** Employs a counting semaphore (`sem_t`) to limit the number of active client-handling threads, preventing server overload.
 *   **In-Memory Caching (LRU):**
     *   Stores HTTP responses to minimize redundant requests to origin servers.
-    *   Implements a Least Recently Used (LRU) eviction strategy using a thread-safe doubly linked list.
+    *   Implements a Least Recently Used (LRU) eviction strategy using a thread-safe linked list.
     *   Configurable cache size (`MAX_CACHE_SIZE`) and individual element size (`MAX_ELEMENT_SIZE`).
 *   **Thread Safety:** Utilizes `pthread_mutex_t` to protect shared resources, specifically the cache data structure, from race conditions.
-*   **HTTP Error Handling:** Sends appropriate HTTP error responses (e.g., 400, 404, 500, 501, 505) to clients for malformed requests or server issues.
+*   **HTTP Error Handling:** Sends appropriate HTTP error responses to clients for malformed requests or server issues.
 *   **Docker Support:** Includes a `Dockerfile` for easy containerization, ensuring a consistent and isolated development/deployment environment.
 
 ## Project Theory
@@ -83,18 +82,7 @@ Proxy servers offer several benefits, including:
 *   **Fixed Cache Element Size:** Individual cached responses are limited by `MAX_ELEMENT_SIZE`, meaning very large web pages or files may not be cached.
 *   **Partial Response Caching:** If a complex web page loads multiple clients/resources itself (e.g., embedded images, scripts), the cache currently treats each of these as a separate HTTP response. A single URL might not fully open from cache if it relies on many sub-elements being cached individually and the cache is small.
 *   **`GET` Method Only:** The proxy only supports HTTP `GET` requests. Other methods like `POST`, `PUT`, `DELETE` are not implemented.
-*   **No HTTPS Support:** Does not handle encrypted HTTPS traffic (which typically requires a different proxying approach like CONNECT tunneling).
-
-#### Potential Extensions:
-
-*   **Multi-processing:** Explore using `fork()` for a multi-process architecture, leveraging parallelism across CPU cores.
-*   **Advanced Filtering:** Implement more sophisticated content filtering or URL blocking rules.
-*   **Support for Other HTTP Methods:** Extend functionality to handle `POST`, `PUT`, `DELETE`, etc.
-*   **Persistent Cache:** Implement a disk-based cache to persist content across proxy restarts.
-*   **HTTPS (CONNECT) Tunneling:** Add support for HTTPS traffic.
-*   **Robust Error Handling:** Further refine error handling and logging for production-grade robustness.
-*   **Configuration File:** Allow port, cache size, and other parameters to be configured via a file instead of command-line arguments.
-
+*   **No HTTPS Support:** Does not handle encrypted HTTPS traffic.
 ---
 
 ## How to Run
